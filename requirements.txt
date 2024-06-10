@@ -1,0 +1,10 @@
+tqdm
+nltk
+numpy
+rouge_score
+rdkit
+rdchiral
+openai==0.28.1
+scipy
+gensim
+tiktoken
