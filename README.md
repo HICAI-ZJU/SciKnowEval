@@ -21,13 +21,6 @@
 
 The <b>Sci</b>entific <b>Know</b>ledge <b>Eval</b>uation (<b>SciKnowEval</b>) benchmark for Large Language Models (LLMs) is inspired by the profound principles outlined in the “<i>Doctrine of the Mean</i>” from ancient Chinese philosophy. This benchmark is designed to assess LLMs based on their proficiency in **Studying Extensively**, **Enquiring Earnestly**, **Thinking Profoundly**, **Discerning Clearly**, and **Practicing Assiduously**. Each of these dimensions offers a unique perspective on evaluating the capabilities of LLMs in handling scientific knowledge.
 
-
-## ✨ Acknowledgements 
-
-Special thanks to the authors of [LlaSMol: Advancing Large Language Models for Chemistry with a Large-Scale, Comprehensive, High-Quality Instruction Tuning Dataset](https://github.com/OSU-NLP-Group/LLM4Chem), and the organizers of the [AI4S Cup - LLM Challenge](https://bohrium.dp.tech/competitions/3793785610?tab=datasets) for their inspiring work.
-
-The sections evaluating molecular generation in [`evaluation/utils/generation.py`](./evaluation/utils/generation.py), as well as [`evaluation/utils/relation_extraction.py`](./evaluation/utils/relation_extraction.py), are grounded in their research. Grateful for their valuable contributions ☺️!
-
 ## 🆕 News
 
 - **\[Feb 2024\]** We released the [SciKnowEval benchmark](https://huggingface.co/datasets/Kehua/SciKnowEval) on Huggingface 🤗.
@@ -43,7 +36,7 @@ The sections evaluating molecular generation in [`evaluation/utils/generation.py
   - [🚀 Evaluate](#3.4)
 - [🏅 SciKnowEval Leaderboaed](#4)
 - [📝 Cite](#6)
-
+- [✨ Acknowledgements](#7)
 ---
 
 <h2 id="2">⌚️  Overview</h2>
@@ -205,6 +198,12 @@ python eval.py \
   year={2024},
 }
 ```
+
+<h2 id="7"> ✨ Acknowledgements </h2>
+
+Special thanks to the authors of [LlaSMol: Advancing Large Language Models for Chemistry with a Large-Scale, Comprehensive, High-Quality Instruction Tuning Dataset](https://github.com/OSU-NLP-Group/LLM4Chem), and the organizers of the [AI4S Cup - LLM Challenge](https://bohrium.dp.tech/competitions/3793785610?tab=datasets) for their inspiring work.
+
+The sections evaluating molecular generation in [`evaluation/utils/generation.py`](./evaluation/utils/generation.py), as well as [`evaluation/utils/relation_extraction.py`](./evaluation/utils/relation_extraction.py), are grounded in their research. Grateful for their valuable contributions ☺️!
 
 ### Other Related Projects
 
