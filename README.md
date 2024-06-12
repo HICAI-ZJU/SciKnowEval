@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="http://www.scimind.ai/sciknoweval/">🌐 Website</a> •
-  <a href="https://huggingface.co/datasets/zjunlp/ChatCell-Instructions">🤗 Dataset</a> •
+  <a href="https://huggingface.co/datasets/Kehua/SciKnowEval">🤗 Dataset</a> •
   <a href="#2">⌚️ Overview</a> •
   <a href="#3">🏹 QuickStart</a> •
   <a href="#4">🏅 SciKnowEval Leaderboaed</a> •
@@ -30,7 +30,7 @@ The sections evaluating molecular generation in [`evaluation/utils/generation.py
 
 ## 🆕 News
 
-- **\[Feb 2024\]** We released the [SciKnowEval benchmark](https://huggingface.co/datasets/zjunlp/ChatCell-Instructions) on Huggingface 🤗.
+- **\[Feb 2024\]** We released the [SciKnowEval benchmark](https://huggingface.co/datasets/Kehua/SciKnowEval) on Huggingface 🤗.
 
 
 ## 📌 Table of Contents
@@ -97,6 +97,12 @@ pip install -r requirements.txt
 
 
 <h3 id="3.2">📜 Step 2 : Prepare data</h3>
+
+* **Download** the SciKnowEval benchmark data: You should first download our dataset. We provide two sources:
+  
+  1. 🤗 HuggingFace homepage: [https://huggingface.co/datasets/Kehua/SciKnowEval](https://huggingface.co/datasets/Kehua/SciKnowEval)
+  
+  2. The `./raw_data/` folder in this repository: We split the dataset by level (L1~L5) and task. You can download and integrate the data into a single JSON file. 
 
 * `eval.py` is the official evaluation code of SciKnowEval. You only need to provide the model's answer results in JSON format to evaluate.
 
