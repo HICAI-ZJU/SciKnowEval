@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="http://www.scimind.ai/sciknoweval/">🌐 Website</a> •
-  <a href="https://huggingface.co/datasets/Kehua/SciKnowEval">🤗 Dataset</a> •
+  <a href="https://huggingface.co/datasets/hicai-zju/SciKnowEval">🤗 Dataset</a> •
   <a href="#2">⌚️ Overview</a> •
   <a href="#3">🏹 QuickStart</a> •
   <a href="#4">🏅 SciKnowEval Leaderboaed</a> •
@@ -23,7 +23,7 @@ The <b>Sci</b>entific <b>Know</b>ledge <b>Eval</b>uation (<b>SciKnowEval</b>) be
 
 ## 🆕 News
 
-- **\[Feb 2024\]** We released the [SciKnowEval benchmark](https://huggingface.co/datasets/Kehua/SciKnowEval) on Huggingface 🤗.
+- **\[Feb 2024\]** We released the [SciKnowEval benchmark](https://huggingface.co/datasets/hicai-zju/SciKnowEval) on Huggingface 🤗.
 
 
 ## 📌 Table of Contents
@@ -93,7 +93,7 @@ pip install -r requirements.txt
 
 * **Download** the SciKnowEval benchmark data: You should first download our dataset. We provide two sources:
   
-  1. 🤗 HuggingFace homepage: [https://huggingface.co/datasets/Kehua/SciKnowEval](https://huggingface.co/datasets/Kehua/SciKnowEval)
+  1. 🤗 HuggingFace homepage: [https://huggingface.co/datasets/hicai-zju/SciKnowEval](https://huggingface.co/datasets/hicai-zju/SciKnowEval)
   
   2. The `./raw_data/` folder in this repository: We split the dataset by level (L1~L5) and task. You can download and integrate the data into a single JSON file. 
 
