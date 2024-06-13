@@ -3,6 +3,7 @@
 <h1 align="center">  <img src="figure/logo.svg" width="5%" height="5%"> SciKnowEval: Evaluating Multi-level Scientific Knowledge of Large Language Models </h1>
 
 <p align="center">
+  <a href="">📖 Paper</a> •
   <a href="http://www.scimind.ai/sciknoweval/">🌐 Website</a> •
   <a href="https://huggingface.co/datasets/hicai-zju/SciKnowEval">🤗 Dataset</a> •
   <a href="#2">⌚️ Overview</a> •
@@ -23,7 +24,7 @@ The <b>Sci</b>entific <b>Know</b>ledge <b>Eval</b>uation (<b>SciKnowEval</b>) be
 
 ## 🆕 News
 
-- **\[Feb 2024\]** We released the [SciKnowEval benchmark](https://huggingface.co/datasets/hicai-zju/SciKnowEval) on Huggingface 🤗.
+- **\[Feb 2024\]** We released the [SciKnowEval dataset](https://huggingface.co/datasets/hicai-zju/SciKnowEval) on Huggingface 🤗.
 
 
 ## 📌 Table of Contents
@@ -195,6 +196,7 @@ python eval.py \
 @article{feng2024sciknoweval,
   title={SciKnowEval: Evaluating Multi-level Scientific Knowledge of Large Language Models},
   author={Feng, Kehua and Ding, Keyan and Wang, Weijie and Zhuang, Xiang and Wang, Zeyuan and Qin Ming and Zhao, Yu and Yao, Jianhua and Zhang, Qiang and Chen, Huajun},
+  journal = {arXiv},
   year={2024},
 }
 ```
