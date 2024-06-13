@@ -8,7 +8,7 @@
   <a href="https://huggingface.co/datasets/hicai-zju/SciKnowEval">🤗 Dataset</a> •
   <a href="#2">⌚️ Overview</a> •
   <a href="#3">🏹 QuickStart</a> •
-  <a href="#4">🏅 SciKnowEval Leaderboaed</a> •
+  <a href="#4">🏅 Leaderboard</a> •
   <a href="#6">📝 Cite</a>
 </p>
 
