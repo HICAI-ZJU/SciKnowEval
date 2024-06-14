@@ -3,11 +3,12 @@
 <h1 align="center">  <img src="figure/logo.svg" width="5%" height="5%"> SciKnowEval: Evaluating Multi-level Scientific Knowledge of Large Language Models </h1>
 
 <p align="center">
+  <a href="https://arxiv.org/abs/2406.09098">📖 Paper</a> •
   <a href="http://www.scimind.ai/sciknoweval/">🌐 Website</a> •
   <a href="https://huggingface.co/datasets/hicai-zju/SciKnowEval">🤗 Dataset</a> •
   <a href="#2">⌚️ Overview</a> •
   <a href="#3">🏹 QuickStart</a> •
-  <a href="#4">🏅 SciKnowEval Leaderboaed</a> •
+  <a href="#4">🏅 Leaderboard</a> •
   <a href="#6">📝 Cite</a>
 </p>
 
@@ -23,7 +24,7 @@ The <b>Sci</b>entific <b>Know</b>ledge <b>Eval</b>uation (<b>SciKnowEval</b>) be
 
 ## 🆕 News
 
-- **\[Feb 2024\]** We released the [SciKnowEval benchmark](https://huggingface.co/datasets/hicai-zju/SciKnowEval) on Huggingface 🤗.
+- **\[Feb 2024\]** We released the [SciKnowEval dataset](https://huggingface.co/datasets/hicai-zju/SciKnowEval) on Huggingface 🤗.
 
 
 ## 📌 Table of Contents
@@ -167,7 +168,7 @@ python eval.py \
 |-----------------|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:------------:|
 |                 | L1   | L2   | L3   | L4   | L5   | All  | L1   | L2   | L3   | L4   | L5   | All  |  |
 | 🥇 **GPT-4o**      | **2.00** | **2.25** | **6.00** | 4.00  | **1.20** | **3.28** | **1.00** | _2.29_ | _4.00_ | 7.00  | 3.75  | **3.46** | 1  |
-| 🥈 **Gemini1.5-Pro-latest** | 4.50  | 5.12  | _6.14_ | **2.67** | 6.60  | 5.36  | _2.67_ | 4.00  | **3.57** | **1.33** | 11.75 | _4.67_ | 2  |
+| 🥈 **Gemini-1.5-Pro-latest** | 4.50  | 5.12  | _6.14_ | **2.67** | 6.60  | 5.36  | _2.67_ | 4.00  | **3.57** | **1.33** | 11.75 | _4.67_ | 2  |
 | 🥉 **GPT-4-Turbo-2024-04-09** | 4.00  | 5.50  | 7.86  | _3.33_ | 4.00  | 5.48  | 3.00  | **1.57** | 7.29  | _4.67_ | 7.75  | 4.83  | 3   |
 | **Claude3-sonnet-20240229** | 5.50  | _4.12_ | 8.43  | 4.00  | _2.00_ | _5.00_ | 6.00  | 4.43  | 7.86  | 8.00  | 6.00  | 6.33  | 4  |
 | **GPT-3.5-Turbo-0125** | _2.50_ | 7.62  | 11.86 | 4.67  | 7.60  | 8.04  | 9.00  | 7.86  | 8.29  | 7.00  | 8.00  | 8.04  | 5     |
@@ -195,6 +196,7 @@ python eval.py \
 @article{feng2024sciknoweval,
   title={SciKnowEval: Evaluating Multi-level Scientific Knowledge of Large Language Models},
   author={Feng, Kehua and Ding, Keyan and Wang, Weijie and Zhuang, Xiang and Wang, Zeyuan and Qin Ming and Zhao, Yu and Yao, Jianhua and Zhang, Qiang and Chen, Huajun},
+  journal = {arXiv},
   year={2024},
 }
 ```
