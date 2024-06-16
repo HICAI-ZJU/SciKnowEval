@@ -35,7 +35,7 @@ The <b>Sci</b>entific <b>Know</b>ledge <b>Eval</b>uation (<b>SciKnowEval</b>) be
   - [📜 Prepare data](#3.2)
   - [🛒 Prepare models](#3.3)
   - [🚀 Evaluate](#3.4)
-- [🏅 SciKnowEval Leaderboaed](#4)
+- [🏅 SciKnowEval Leaderboard](#4)
 - [📝 Cite](#6)
 - [✨ Acknowledgements](#7)
 ---
@@ -161,7 +161,7 @@ python eval.py \
 ```
  
 
-<h2 id="4">🏅 SciKnowEval Leaderboaed</h2>
+<h2 id="4">🏅 SciKnowEval Leaderboard</h2>
 
 
 | Models          | Biology |    |    |    |    |    | Chemistry |    |    |    |    |    |  Overall Rank  |
