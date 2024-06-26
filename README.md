@@ -24,7 +24,7 @@ The <b>Sci</b>entific <b>Know</b>ledge <b>Eval</b>uation (<b>SciKnowEval</b>) be
 
 ## 🆕 News
 
-- **\[Feb 2024\]** We released the [SciKnowEval dataset](https://huggingface.co/datasets/hicai-zju/SciKnowEval) on Huggingface 🤗.
+- **\[Jun 2024\]** We released the [SciKnowEval dataset](https://huggingface.co/datasets/hicai-zju/SciKnowEval) on Huggingface 🤗.
 
 
 ## 📌 Table of Contents
@@ -195,11 +195,13 @@ python eval.py \
 <h2 id="6">📝 Cite</h2>
 
 ```
-@article{feng2024sciknoweval,
-  title={SciKnowEval: Evaluating Multi-level Scientific Knowledge of Large Language Models},
-  author={Feng, Kehua and Ding, Keyan and Wang, Weijie and Zhuang, Xiang and Wang, Zeyuan and Qin Ming and Zhao, Yu and Yao, Jianhua and Zhang, Qiang and Chen, Huajun},
-  journal = {arXiv},
-  year={2024},
+@misc{feng2024sciknoweval,
+    title={SciKnowEval: Evaluating Multi-level Scientific Knowledge of Large Language Models},
+    author={Kehua Feng and Keyan Ding and Weijie Wang and Xiang Zhuang and Zeyuan Wang and Ming Qin and Yu Zhao and Jianhua Yao and Qiang Zhang and Huajun Chen},
+    year={2024},
+    eprint={2406.09098},
+    archivePrefix={arXiv},
+    primaryClass={cs.CL}
 }
 ```
 
