@@ -192,7 +192,8 @@ python eval.py \
 |24| galastica-6.7b             | 22.50   | 20.88  | 16.14  | 23.00   | 23.00   | 20.36   | 17.67   | 22.86   | 17.14   | 18.00    | 24.00    | 20.12    |
 |25| LlaSMol-mistral-7b         | 24.50   | 21.25  | 18.14  | 24.67  | 21.60   | 21.12   | 24.33   | 23.71   | 20.71   | 25.00    | 12.50    | 21.21    |
 
-  
+The detailed scores of each task are reported [here](http://scimind.ai/sciknoweval).
+
 <h2 id="6">📝 Cite</h2>
 
 ```
