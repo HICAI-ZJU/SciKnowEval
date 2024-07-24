@@ -24,7 +24,9 @@ The <b>Sci</b>entific <b>Know</b>ledge <b>Eval</b>uation (<b>SciKnowEval</b>) be
 
 ## 🆕 News
 
-- **\[Jun 2024\]** We released the [SciKnowEval dataset](https://huggingface.co/datasets/hicai-zju/SciKnowEval) on Huggingface 🤗.
+- **\[Jul 2024\]** We have recently added the Physics and Materials to SciKnowEval.
+
+- **\[Jun 2024\]** We released the SciKnowEval [Dataset](https://huggingface.co/datasets/hicai-zju/SciKnowEval) and [Leaderboard](http://scimind.ai/sciknoweval) for Biology and Chemistry.
 
 
 ## 📌 Table of Contents
@@ -74,7 +76,7 @@ Additional QAs are sampled from existing scientific benchmarks like MedMCQA, Sci
 * ⚗️ *<b>Transforming Scientific Databases:</b>*
 This approach transforms data from biological and chemical databases (e.g., PubChem, UniProtKB) into textual formats suitable for LLM evaluation. It starts with quality screening, such as filtering invalid chemical structures, followed by the use of multiple question templates to convert structured data (like sequence annotations) into natural language QA pairs, including multiple-choice and true/false formats.
 
-* ✅ *<b>Quality Control</b>*: To further ensure the accuracy and reliability of the dataset, each task within our dataset undergoes validation by two domain experts in biology and chemistry. Experts evaluate the relevance and correctness of the scientific problems and solutions.
+* ✅ *<b>Quality Control</b>*: To further ensure the accuracy and reliability of the dataset, each task within our dataset undergoes validation by two domain experts in biology and chemistry. Experts evaluate the relevance and correctness of scientific problems and solutions.
 
 <h2 id="3">🏹 QuickStart</h2>
 <h3 id="3.1">⬇️ Step 1: Installation</h3>
@@ -163,36 +165,7 @@ python eval.py \
 
 <h2 id="4">🏅 SciKnowEval Leaderboard</h2>
 
-| Rank | Models          | Biology |    |    |    |    |    | Chemistry |    |    |    |    |    |
-|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
-| |                 | L1   | L2   | L3   | L4   | L5   | Bio Average  | L1   | L2   | L3   | L4   | L5   | Chem Average  |
-|1| 🥇 **claude-3.5-sonnet-20240620** | _3.00_    | _5.50_    | 8.14   | **2.67**   | **1.20**    | **4.84**   | **1.33**    | _3.57_    | **1.43**    | **2.00**     | _4.00_    | **2.54**     |
-|2| 🥈 **gpt-4o**                     | 4.50    | **3.75**   | _7.86_   | 5.67   | _2.00_    | **4.84**    | _1.67_    | 4.57    | 5.71    | 10.33   | **3.00**     | _5.00_      |
-|3| 🥉 **gemini-1.5-pro-latest**      | 7.50    | 7.50    | **7.71**   | _5.00_    | 8.60    | 7.48    | 4.33    | 6.86    | _5.00_     | _3.67_    | 9.50     | 6.04     |
-|4| gpt-4-turbo-2024-04-09             | 8.00    | 8.12   | 9.71   | 6.33   | 5.60    | 7.84    | 5.00     | **2.43**    | 10.14   | 8.33    | 6.00     | 6.33     |
-|5| qwen2-72b-instruct                 | **2.50**    | 5.62   | 13.43  | _5.00_    | 6.60    | 7.68    | 5.00     | 3.86    | 10.29   | 5.00     | 8.25    | 6.75     |
-|6| claude-3-sonnet-20240229           | 10.50       | 6.62   | 11.57  | 7.33   | 3.00    | 7.68    | 9.67    | 8.00     | 10.86   | 11.33   | 6.00     | 9.12     |
-|7| glm-4                      | 6.50        | 6.25   | 8.43   | 8.33   | 9.80    | 7.84    | 9.67    | 8.86    | 11.43   | 7.33    | 7.75    | 9.33     |
-|8| qwen-max                   | 3.50        | 11.25  | 10.14  | 6.67   | 11.40   | 9.80     | 5.67    | 5.43    | 9.29    | 6.00     | 10.00    | 7.42     |
-|9| yi-large                   | 8.00        | 10.88  | 13.29  | 8.33   | 16.00   | 12.04   | 7.33    | 7.00     | 11.86   | 7.33    | 11.25   | 9.21     |
-|10| gpt-3.5-turbo              | 5.50        | 11.62  | 15.86  | 8.33   | 11.60   | 11.92   | 14.00    | 12.71   | 11.57   | 11.33   | 10.00    | 11.92    |
-|11| llama3-8b-inst             | 13.50       | 9.00    | 16.0   | 11.33  | 13.60   | 12.52   | 10.67   | 10.86   | 12.00    | 11.00    | 14.50    | 11.79    |
-|12| qwen1.5-14b-chat           | 10.00       | 14.62  | 11.86  | 14.00   | 9.40    | 12.36   | 14.33   | 12.00    | 9.43    | 13.00    | 13.75   | 11.96    |
-|13| ChemDFM-13b                | 11.00       | 15.00   | 15.86  | 14.00   | 15.60   | 14.92   | 11.33   | 14.43   | 11.29   | 13.33   | 9.00     | 12.08    |
-|14| ChemLLM-20b-chat           | 17.50   | 10.25  | 13.57  | 19.67  | 14.40   | 13.72   | 15.00    | 12.57   | 14.57   | 21.33   | 11.00    | 14.29    |
-|15| qwen1.5-7b-chat            | 14.00   | 14.25  | 18.43  | 13.00   | 11.20   | 14.64   | 15.67   | 14.86   | 12.86   | 16.67   | 15.25   | 14.67    |
-|16| molinst-biotext-8b         | 18.50   | 13.75  | 10.86  | 17.00   | 21.20   | 15.2    | 14.33   | 14.43   | 10.71   | 14.33   | 21.50    | 14.50     |
-|17| chatglm3-6b                | 17.00   | 18.62  | 15.14  | 14.33  | 15.00   | 16.28   | 20.33   | 20.00    | 19.43   | 17.33   | 18.50    | 19.29    |
-|18| galastica-30b              | 16.00   | 18.00   | 11.43  | 21.67  | 20.40   | 16.92   | 11.67   | 21.43   | 17.14   | 21.67   | 20.25   | 18.79    |
-|19| llama2-13b-chat            | 24.00   | 15.38  | 21.71  | 14.33  | 13.00   | 17.24   | 23.67   | 18.86   | 20.00    | 14.00    | 17.50    | 18.96    |
-|20| gemma1.1-7b-inst           | 21.00   | 21.75  | 15.57  | 19.00   | 17.40   | 18.76   | 22.00    | 20.86   | 16.86   | 15.00    | 12.25   | 17.67    |
-|21| mistral-7b-inst            | 16.00   | 17.38  | 19.14  | 17.67  | 21.80   | 18.68   | 19.33   | 19.14   | 20.14   | 11.67   | 23.75   | 19.29    |
-|22| sciglm-6b                  | 21.00   | 18.88  | 15.29  | 21.00   | 21.60   | 18.84   | 21.00    | 20.29   | 17.14   | 22.67   | 20.25   | 19.75    |
-|23| ChemLLM-7b-chat            | 20.00   | 20.75  | 17.86  | 19.33  | 19.80   | 19.52   | 20.33   | 19.86   | 19.86   | 21.00    | 16.50    | 19.50     |
-|24| galastica-6.7b             | 22.50   | 20.88  | 16.14  | 23.00   | 23.00   | 20.36   | 17.67   | 22.86   | 17.14   | 18.00    | 24.00    | 20.12    |
-|25| LlaSMol-mistral-7b         | 24.50   | 21.25  | 18.14  | 24.67  | 21.60   | 21.12   | 24.33   | 23.71   | 20.71   | 25.00    | 12.50    | 21.21    |
-
-The detailed scores of each task are reported [here](http://scimind.ai/sciknoweval).
+The latest leaderboards are reported [here](http://scimind.ai/sciknoweval).
 
 <h2 id="6">📝 Cite</h2>
 
