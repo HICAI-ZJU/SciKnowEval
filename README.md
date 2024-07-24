@@ -1,6 +1,6 @@
 <div align="center">
 
-<h1 align="center">  <img src="figure/logo.svg" width="5%" height="5%"> SciKnowEval: Evaluating Multi-level Scientific Knowledge of Large Language Models </h1>
+<h1 align="center"> SciKnowEval: Evaluating Multi-level Scientific Knowledge of Large Language Models </h1>
 
 <p align="center">
   <a href="https://arxiv.org/abs/2406.09098">📖 Paper</a> •
@@ -59,24 +59,9 @@ The <b>Sci</b>entific <b>Know</b>ledge <b>Eval</b>uation (<b>SciKnowEval</b>) be
 <h3 id="2.2">🎯 Domains and Tasks</h3>
 <div align=center><img src="figure/tasks.jpeg" width="90%" height="100%" /></div>
 
-<h3 id="2.3">📊 Data Stats</h3>
-
-<div align=center><img src="figure/stats.png" width="80%" height="100%" /></div>
-
 <h3 id="2.4">🛠️ Data Construction</h3>
 
 <div align=center><img src="figure/data_collection.png" width="70%" height="100%" /></div>
-
-* 🤖 *<b>Generating New QAs from Literature Corpus:</b>*
-This method involves collecting scientific papers from sources like BioRxiv, PubMed, and textbook databases such as LibreTexts. Large Language Models (LLMs) are used to automate the generation of QA pairs by designing effective prompts based on domain experts' advice. These prompts guide the LLMs to extract relevant knowledge from literature and generate QA pairs that ensure answers are explicitly found in the original text without adding external information.
-
-* 🔩 *<b>Refactoring the Existing QAs:</b>*
-Additional QAs are sampled from existing scientific benchmarks like MedMCQA, SciEval, and others. LLMs are employed to refactor these QAs by rewriting questions and reordering options to avoid data contamination and leakage. In cases where QAs lack explicit annotations for their corresponding levels in SciKnowEval, LLMs automatically categorize the data into distinct levels.
-
-* ⚗️ *<b>Transforming Scientific Databases:</b>*
-This approach transforms data from biological and chemical databases (e.g., PubChem, UniProtKB) into textual formats suitable for LLM evaluation. It starts with quality screening, such as filtering invalid chemical structures, followed by the use of multiple question templates to convert structured data (like sequence annotations) into natural language QA pairs, including multiple-choice and true/false formats.
-
-* ✅ *<b>Quality Control</b>*: To further ensure the accuracy and reliability of the dataset, each task within our dataset undergoes validation by two domain experts in biology and chemistry. Experts evaluate the relevance and correctness of scientific problems and solutions.
 
 <h2 id="3">🏹 QuickStart</h2>
 <h3 id="3.1">⬇️ Step 1: Installation</h3>
@@ -165,7 +150,7 @@ python eval.py \
 
 <h2 id="4">🏅 Leaderboard</h2>
 
-The latest leaderboards are shown [here](http://scimind.ai/sciknoweval).
+The latest leaderboards are shown [here](http://scimind.ai/sciknoweval/#overall).
 
 <h2 id="6">📝 Cite</h2>
 
