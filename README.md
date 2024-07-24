@@ -24,9 +24,9 @@ The <b>Sci</b>entific <b>Know</b>ledge <b>Eval</b>uation (<b>SciKnowEval</b>) be
 
 ## 🆕 News
 
-- **\[Jul 2024\]** We have recently added the Physics and Materials to SciKnowEval.
+- **\[Jul 2024\]** We have recently added the Physics and Materials to SciKnowEval. You can access the dataset [here](https://huggingface.co/datasets/hicai-zju/SciKnowEval) and check out the leaderboard [here](http://scimind.ai/sciknoweval).
 
-- **\[Jun 2024\]** We released the SciKnowEval [Dataset](https://huggingface.co/datasets/hicai-zju/SciKnowEval) and [Leaderboard](http://scimind.ai/sciknoweval) for Biology and Chemistry.
+- **\[Jun 2024\]** We released the SciKnowEval Dataset and Leaderboard for Biology and Chemistry.
 
 
 ## 📌 Table of Contents
@@ -37,7 +37,7 @@ The <b>Sci</b>entific <b>Know</b>ledge <b>Eval</b>uation (<b>SciKnowEval</b>) be
   - [📜 Prepare data](#3.2)
   - [🛒 Prepare models](#3.3)
   - [🚀 Evaluate](#3.4)
-- [🏅 SciKnowEval Leaderboard](#4)
+- [🏅 Leaderboard](#4)
 - [📝 Cite](#6)
 - [✨ Acknowledgements](#7)
 ---
@@ -163,9 +163,9 @@ python eval.py \
 ```
  
 
-<h2 id="4">🏅 SciKnowEval Leaderboard</h2>
+<h2 id="4">🏅 Leaderboard</h2>
 
-The latest leaderboards are reported [here](http://scimind.ai/sciknoweval).
+The latest leaderboards are shown [here](http://scimind.ai/sciknoweval).
 
 <h2 id="6">📝 Cite</h2>
 
