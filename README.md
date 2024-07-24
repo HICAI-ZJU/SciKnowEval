@@ -57,7 +57,8 @@ The <b>Sci</b>entific <b>Know</b>ledge <b>Eval</b>uation (<b>SciKnowEval</b>) be
 * 🔬 **L5**: **Practicing assiduously** (i.e., *knowledge practice and application*). The final dimension assesses the LLM's capability to apply scientific knowledge effectively in real-world scenarios, such as analyzing complex scientific problems and creating innovative solutions.
 
 <h3 id="2.2">🎯 Domains and Tasks</h3>
-<div align=center><img src="figure/tasks.jpeg" width="90%" height="100%" /></div>
+<div align=center><img src="figure/tasks.jpeg" width="80%" height="100%" /></div>
+<div align=center><img src="figure/tasks2.jpg" width="80%" height="100%" /></div>
 
 <h3 id="2.4">🛠️ Data Construction</h3>
 
