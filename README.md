@@ -89,10 +89,9 @@ pip install -r requirements.txt
 
 1. **Download the SciKnowEval Benchmark Data**: To begin evaluating language models using the SciKnowEval benchmark, you should first download our dataset. There are two available sources:
 
-  * 🤗 **HuggingFace Dataset Hub**: Access and download the dataset directly from our HuggingFace page:
-   - [https://huggingface.co/datasets/hicai-zju/SciKnowEval](https://huggingface.co/datasets/hicai-zju/SciKnowEval)
+    * 🤗 **HuggingFace Dataset Hub**: Access and download the dataset directly from our HuggingFace page: [https://huggingface.co/datasets/hicai-zju/SciKnowEval](https://huggingface.co/datasets/hicai-zju/SciKnowEval)
 
-  * **Repository Data Folder**: The dataset is organized by level (L1~L5) and task within the `./raw_data/` folder of this repository. You may download parts separately and consolidate them into a single JSON file as needed.
+    * **Repository Data Folder**: The dataset is organized by level (L1~L5) and task within the `./raw_data/` folder of this repository. You may download parts separately and consolidate them into a single JSON file as needed.
 
 2. **Prepare Your Model’s Predictions**: Utilize the official evaluation script `eval.py` provided in this repository to assess your model. You are required to prepare your model's predictions in the following JSON format, where each entry must preserve all the original attributes (which can be found in the dataset you downloaded) of the data such as question, choices, answerKey, type, domain, level, task, and subtask. Add your model's predicted answer under the "response" field.
 
