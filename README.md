@@ -85,37 +85,45 @@ pip install -r requirements.txt
 
 <h3 id="3.2">📜 Step 2 : Prepare data</h3>
 
-* **Download** the SciKnowEval benchmark data: You should first download our dataset. We provide two sources:
-  
-  1. 🤗 HuggingFace homepage: [https://huggingface.co/datasets/hicai-zju/SciKnowEval](https://huggingface.co/datasets/hicai-zju/SciKnowEval)
-  
-  2. The `./raw_data/` folder in this repository: We split the dataset by level (L1~L5) and task. You can download and integrate the data into a single JSON file. 
+#### Getting Started with SciKnowEval Benchmark
 
-* `eval.py` is the official evaluation code of SciKnowEval. You only need to provide the model's answer results in JSON format to evaluate.
+1. **Download the SciKnowEval Benchmark Data**: To begin evaluating language models using the SciKnowEval benchmark, you should first download our dataset. There are two available sources:
 
-* ❗Note that each data in the JSON file must contain all the original information, such as question, choices, answerKey, type, domain, level, task and subtask, as shown below:
+  * 🤗 **HuggingFace Dataset Hub**: Access and download the dataset directly from our HuggingFace page:
+   - [https://huggingface.co/datasets/hicai-zju/SciKnowEval](https://huggingface.co/datasets/hicai-zju/SciKnowEval)
 
-```python
+  * **Repository Data Folder**: The dataset is organized by level (L1~L5) and task within the `./raw_data/` folder of this repository. You may download parts separately and consolidate them into a single JSON file as needed.
+
+2. **Prepare Your Model’s Predictions**: Utilize the official evaluation script `eval.py` provided in this repository to assess your model. You are required to prepare your model's predictions in the following JSON format, where each entry must preserve all the original attributes (which can be found in the dataset you downloaded) of the data such as question, choices, answerKey, type, domain, level, task, and subtask. Add your model's predicted answer under the "response" field.
+
+Example JSON format for model evaluation:
+```json
 [
   {
-    "question": "The question", 
+    "question": "What triggers the activation of platelet integrins?",
     "choices": {
-      "text": ["option A", "option B", "option C", "option D"], 
+      "text": ["White blood cells", "Collagen exposure", "Adrenaline release", "Nutrient absorption"],
       "label": ["A", "B", "C", "D"]
-    }, 
-    "answerKey": "A", 
-    "type": "mcq-4-choices", 
-    "domain": "Chemistry or Biology", 
-    "details": {"level": "level", "task": "xx", "subtask": "xx"}, 
-    "response": "A"  # response is the model's prediction
+    },
+    "answerKey": "B",
+    "type": "mcq-4-choices",
+    "domain": "Biology",
+    "details": {
+      "level": "L2",
+      "task": "Cellular Function",
+      "subtask": "Platelet Activation"
+    },
+    "response": "B"  // Insert your model's prediction here
   },
-  # ...
+  // Additional entries...
 ]
 ```
 
-In summary:
-* Please preserve *all fields of the original data* as much as possible.
-* Please save the model's predicted answers in the "*response*" field.
+#### ❗Key Points to Remember
+- **Preserve All Original Fields**: Ensure each JSON object retains all the original data fields to maintain the integrity of the evaluation.
+- **Model Predictions**: Place your model’s predictions in the "response" field of each JSON object.
+
+By following these guidelines, you can effectively use the SciKnowEval benchmark to evaluate the performance of language models across various scientific tasks and levels.
 
 
 <h3 id="3.3">🛒 Step 3: Prepare models</h3>
