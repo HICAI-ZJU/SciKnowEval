@@ -33,7 +33,7 @@ class OpenAIChat():
             }
         
         openai.api_key = os.environ.get("OPENAI_API_KEY")
-        openai.api_base = "https://api.ai-gaochao.cn/v1"
+        # openai.api_base = os.environ.get("API_BASE")
 
         self.history = []
 
@@ -139,7 +139,7 @@ class OpenAIChat():
             raise TypeError("Unsupported type for messages_list.")
     
     async def async_run(self, messages_list):
-        retry = 1
+        retry = 2
 
         responses = [None for _ in range(len(messages_list))]
 

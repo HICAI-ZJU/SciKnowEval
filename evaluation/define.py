@@ -70,8 +70,49 @@ def get_task_func():
             'biological_procedure_generation': get_score_GPT4,
             'biological_reagent_generation': get_score_GPT4,
             'protein_description_generation': get_score_BLEU_ROUGE,
-            'protein_design': get_score_BLEU_ROUGE,
+            'protein_design': get_score_smith_waterman,
             'single_cell_analysis': get_score_BLEU_ROUGE,
+            ### Meterial
+            # L1
+            'material_literature_QA': get_score_CLS,
+            # L2
+            'material_hypothesis_verification': get_score_CLS,
+            'material_component_extraction': get_score_GPT4,
+            'material_data_extraction': get_score_CLS,
+            'material_detailed_understanding': get_score_CLS,
+            'material_reasoning_and_interpretation': get_score_CLS,
+            'material_text_summary': get_score_GPT4,
+            # L3
+            'valence_electron_difference_calculation': get_score_CLS,
+            'material_calculation': get_score_CLS,
+            'lattice_volume_calculation': get_score_CLS,
+            'perovskite_stability_prediction': get_score_CLS,
+            'diffusion_rate_analysis': get_score_CLS,
+            # L4
+            'material_safety_QA': get_score_CLS,
+            'material_toxicity_prediction': get_score_CLS,
+            # L5
+            'crystal_structure_and_composition_analysis': get_score_GPT4,
+            'specified_band_gap_material_generation': get_score_GPT4,
+            'property_and_usage_analysis': get_score_GPT4,
+            ### Physics
+            # L1
+            'physics_literature_QA': get_score_CLS,
+            'fundamental_physics_exam': get_score_CLS,
+            # L2
+            'physics_hypothesis_verification': get_score_CLS,
+            'physics_detailed_understanding': get_score_CLS,
+            'physics_reasoning_and_interpretation': get_score_CLS,
+            'physics_text_summary': get_score_GPT4,
+            # L3
+            'high_school_physics_calculation': get_score_CLS,
+            'general_physics_calculation': get_score_CLS,
+            'physics_formula_derivation': get_score_GPT4,
+            # L4
+            'physics_safety_QA': get_score_CLS,
+            'physics_laboratory_safety_test': get_score_CLS,
+            # L5
+            'physics_problem_solving': get_score_GPT4,
         }
     except:
         raise NotImplementedError("task not found")
@@ -83,6 +124,7 @@ def reformat_result(result: Dict[str, Any]) -> Dict[str, Any]:
                 'molecule_name_conversion': result['molecule_name_conversion'],
                 'molecular_property_prediction': result['molecular_property_prediction'],
                 'biology_literature_QA': result['biology_literature_QA'],
+                'protein_description_generation': result['protein_description_generation'],
             },
             'L2': {
                 'drug_drug_relation_extraction': result['drug_drug_relation_extraction'],
@@ -111,7 +153,6 @@ def reformat_result(result: Dict[str, Any]) -> Dict[str, Any]:
             'L5': {
                 'biological_procedure_generation': result['biological_procedure_generation'],
                 'biological_reagent_generation': result['biological_reagent_generation'],
-                'protein_description_generation': result['protein_description_generation'],
                 'protein_design': result['protein_design'],
                 'single_cell_analysis': result['single_cell_analysis'],
             },
@@ -121,6 +162,7 @@ def reformat_result(result: Dict[str, Any]) -> Dict[str, Any]:
                 'molecule_name_conversion': result['molecule_name_conversion'],
                 'molecular_property_prediction': result['molecular_property_prediction'],
                 'chemical_literature_QA': result['chemical_literature_QA'],
+                'molecule_captioning': result['molecule_captioning'],
             },
             'L2': {
                 'reaction_mechanism_inference': result['reaction_mechanism_inference'],
@@ -146,10 +188,62 @@ def reformat_result(result: Dict[str, Any]) -> Dict[str, Any]:
                 'chemical_laboratory_safety_test': result['chemical_laboratory_safety_test'],
             },
             'L5': {
-                'molecule_captioning': result['molecule_captioning'],
                 'molecule_generation': result['molecule_generation'],
                 'chemical_procedure_generation': result['chemical_procedure_generation'],
                 'chemical_reagent_generation': result['chemical_reagent_generation'],
+            },
+        },
+        'Materials': {
+            'L1': {
+                'material_literature_QA': result['material_literature_QA'],
+            },
+            'L2': {
+                'material_hypothesis_verification': result['material_hypothesis_verification'],
+                'material_component_extraction': result['material_component_extraction'],
+                'material_data_extraction': result['material_data_extraction'],
+                'material_detailed_understanding': result['material_detailed_understanding'],
+                'material_reasoning_and_interpretation': result['material_reasoning_and_interpretation'],
+                'material_text_summary': result['material_text_summary'],
+            },
+            'L3': {
+                'valence_electron_difference_calculation': result['valence_electron_difference_calculation'],
+                'material_calculation': result['material_calculation'],
+                'lattice_volume_calculation': result['lattice_volume_calculation'],
+                'perovskite_stability_prediction': result['perovskite_stability_prediction'],
+                'diffusion_rate_analysis': result['diffusion_rate_analysis'],
+            },
+            'L4': {
+                'material_safety_QA': result['material_safety_QA'],
+                'material_toxicity_prediction': result['material_toxicity_prediction'],
+            },
+            'L5': {
+                'crystal_structure_and_composition_analysis': result['crystal_structure_and_composition_analysis'],
+                'specified_band_gap_material_generation': result['specified_band_gap_material_generation'],
+                'property_and_usage_analysis': result['property_and_usage_analysis'],
+            },
+        },
+        'Physics': {
+            'L1': {
+                'physics_literature_QA': result['physics_literature_QA'],
+                'fundamental_physics_exam': result['fundamental_physics_exam'],
+            },
+            'L2': {
+                'physics_hypothesis_verification': result['physics_hypothesis_verification'],
+                'physics_detailed_understanding': result['physics_detailed_understanding'],
+                'physics_reasoning_and_interpretation': result['physics_reasoning_and_interpretation'],
+                'physics_text_summary': result['physics_text_summary'],
+            },
+            'L3': {
+                'high_school_physics_calculation': result['high_school_physics_calculation'],
+                'general_physics_calculation': result['general_physics_calculation'],
+                'physics_formula_derivation': result['physics_formula_derivation'],
+            },
+            'L4': {
+                'physics_safety_QA': result['physics_safety_QA'],
+                'physics_laboratory_safety_test': result['physics_laboratory_safety_test'],
+            },
+            'L5': {
+                'physics_problem_solving': result['physics_problem_solving'],
             },
         },
     }
@@ -163,6 +257,7 @@ def get_task_data(data: List[Dict[str, Any]]) -> Dict[str, Any]:
             'molecule_name_conversion': [d for d in data if d['details']['task'] == 'molecule_name_conversion'],
             'molecular_property_prediction': [d for d in data if d['details']['task'] == 'molecular_property_prediction' and d['details']['level'] == 'L1'],
             'chemical_literature_QA': [d for d in data if d['details']['task'] == 'literature_multi_choice_question' and d['domain'] == 'Chemistry'],
+            'molecule_captioning': [d for d in data if d['details']['task'] == 'molecule_captioning'],
             # L2
             'reaction_mechanism_inference': [d for d in data if d['details']['subtask'] == 'reaction_mechanism_inference'],
             'compound_identification_and_properties': [d for d in data if d['details']['subtask'] == 'compound_identification_and_properties'],
@@ -184,7 +279,6 @@ def get_task_data(data: List[Dict[str, Any]]) -> Dict[str, Any]:
             'mol_toxicity_prediction': [d for d in data if d['details']['task'] == 'mol_toxicity_prediction'],
             'chemical_laboratory_safety_test': [d for d in data if d['details']['task'] == 'laboratory_safety_test' and d['domain'] == 'Chemistry'],
             # L5
-            'molecule_captioning': [d for d in data if d['details']['task'] == 'molecule_captioning'],
             'molecule_generation': [d for d in data if d['details']['task'] == 'molecule_generation'],
             'chemical_procedure_generation': [d for d in data if d['details']['task'] == 'procedure_generation' and d['domain'] == 'Chemistry'],
             'chemical_reagent_generation': [d for d in data if d['details']['task'] == 'reagent_generation' and d['domain'] == 'Chemistry'],
@@ -192,6 +286,7 @@ def get_task_data(data: List[Dict[str, Any]]) -> Dict[str, Any]:
             # L1
             'protein_property_identification': [d for d in data if d['details']['task'] == 'protein_property_identification'],
             'biology_literature_QA': [d for d in data if d['details']['task'] == 'literature_multi_choice_question' and d['domain'] == 'Biology'],
+            'protein_description_generation': [d for d in data if d['details']['task'] == 'protein_description_generation'],
             # L2
             'drug_drug_relation_extraction': [d for d in data if d['details']['subtask'] == 'drug_drug_relation_extraction'],
             'biomedical_judgment_and_interpretation': [d for d in data if d['details']['subtask'] == 'biomedical_judgment_and_interpretation'],
@@ -216,11 +311,52 @@ def get_task_data(data: List[Dict[str, Any]]) -> Dict[str, Any]:
             # L5
             'biological_procedure_generation': [d for d in data if d['details']['task'] == 'procedure_generation' and d['domain'] == 'Biology'],
             'biological_reagent_generation': [d for d in data if d['details']['task'] == 'reagent_generation' and d['domain'] == 'Biology'],
-            'protein_description_generation': [d for d in data if d['details']['task'] == 'protein_description_generation'],
             'protein_design': [d for d in data if d['details']['task'] == 'protein_design'],
             'single_cell_analysis': [d for d in data if d['details']['task'] == 'single_cell_analysis'],
+            ### Material
+            # L1
+            'material_literature_QA': [d for d in data if d['details']['task'] == 'material_literature_QA'],
+            # L2
+            'material_hypothesis_verification': [d for d in data if d['details']['subtask'] == 'material_hypothesis_verification'],
+            'material_component_extraction': [d for d in data if d['details']['subtask'] == 'material_component_extraction'],
+            'material_data_extraction': [d for d in data if d['details']['subtask'] == 'material_data_extraction'],
+            'material_detailed_understanding': [d for d in data if d['details']['subtask'] == 'material_detailed_understanding'],
+            'material_reasoning_and_interpretation': [d for d in data if d['details']['subtask'] == 'material_reasoning_and_interpretation'],
+            'material_text_summary': [d for d in data if d['details']['subtask'] == 'material_text_summary'],
+            # L3
+            'valence_electron_difference_calculation': [d for d in data if d['details']['task'] == 'valence_electron_difference_calculation'],
+            'material_calculation': [d for d in data if d['details']['task'] == 'material_calculation'],
+            'lattice_volume_calculation': [d for d in data if d['details']['task'] == 'lattice_volume_calculation'],
+            'perovskite_stability_prediction': [d for d in data if d['details']['task'] == 'perovskite_stability_prediction'],
+            'diffusion_rate_analysis': [d for d in data if d['details']['task'] == 'diffusion_rate_analysis'],
+            # L4
+            'material_safety_QA': [d for d in data if d['details']['task'] == 'material_safety_QA'],
+            'material_toxicity_prediction': [d for d in data if d['details']['task'] == 'material_toxicity_prediction'],
+            # L5
+            'crystal_structure_and_composition_analysis': [d for d in data if d['details']['task'] == 'crystal_structure_and_composition_analysis'],
+            'specified_band_gap_material_generation': [d for d in data if d['details']['task'] == 'specified_band_gap_material_generation'],
+            'property_and_usage_analysis': [d for d in data if d['details']['task'] in ['property_and_usage_analysis', 'L5_material']],
+            ### Physics
+            # L1
+            'physics_literature_QA': [d for d in data if d['details']['task'] == 'physics_literature_QA'],
+            'fundamental_physics_exam': [d for d in data if d['details']['task'] == 'fundamental_physics_exam'],
+            # L2
+            'physics_hypothesis_verification': [d for d in data if d['details']['subtask'] == 'physics_hypothesis_verification'],
+            'physics_detailed_understanding': [d for d in data if d['details']['subtask'] == 'physics_detailed_understanding'],
+            'physics_reasoning_and_interpretation': [d for d in data if d['details']['subtask'] == 'physics_reasoning_and_interpretation'],
+            'physics_text_summary': [d for d in data if d['details']['subtask'] == 'physics_text_summary'],
+            # L3
+            'high_school_physics_calculation': [d for d in data if d['details']['task'] == 'high_school_physics_calculation'],
+            'general_physics_calculation': [d for d in data if d['details']['task'] == 'general_physics_calculation'],
+            'physics_formula_derivation': [d for d in data if d['details']['task'] == 'physics_formula_derivation'],
+            # L4
+            'physics_safety_QA': [d for d in data if d['details']['task'] == 'physics_safety_QA'],
+            'physics_laboratory_safety_test': [d for d in data if d['details']['task'] == 'physics_laboratory_safety_test'],
+            # L5
+            'physics_problem_solving': [d for d in data if d['details']['task'] == 'physics_problem_solving'],
         }
-        assert sum([len(d) for d in task_data.values()]) == len(data), 'length not equal'
+        assert sum([len(d) for d in task_data.values()]) == len(data), f'length not equal, 0 length task: {[k for k, v in task_data.items() if len(v) == 0]}'
+        print(">>>>>> Total data length:", len(data))
         return task_data
     except Exception as e:
         raise NotImplementedError(f"data error: {e}. please check your task name.")

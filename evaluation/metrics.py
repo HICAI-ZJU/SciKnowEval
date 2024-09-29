@@ -203,6 +203,44 @@ def get_score_Mol_GEN(data: List[Dict[str, Any]]) -> float:
 
     return calculate_smiles_metrics(pred_strs,ans_strs)
 
+def smith_waterman(seq1, seq2, match=2, mismatch=-1, gap=-1):
+    if not seq1 or not seq2 or len(seq1.strip()) == 0 or len(seq2.strip()) == 0:
+        return 0
+    
+    m, n = len(seq1), len(seq2)
+    H = [[0]*(n+1) for _ in range(m+1)]
+    max_score = 0  
+
+    for i in range(1, m+1):
+        for j in range(1, n+1):
+            if seq1[i-1] == seq2[j-1]:
+                score = match
+            else:
+                score = mismatch
+
+            diag = H[i-1][j-1] + score  
+            up = H[i-1][j] + gap        
+            left = H[i][j-1] + gap      
+            H[i][j] = max(diag, up, left, 0)
+
+            if H[i][j] > max_score:
+                max_score = H[i][j]
+
+    max_possible_score = match * min(m, n)
+    if max_possible_score == 0:
+        normalized_score = 0
+    else:
+        normalized_score = max_score / max_possible_score
+    return normalized_score
+
+def get_score_smith_waterman(data: List[Dict[str, Any]]) -> float:
+    
+    seqs1 = [d['response'].strip() for d in data]
+    seqs2 = [d['answer'].strip() for d in data]
+
+    smith_waterman_scores = [smith_waterman(seq1, seq2) for seq1, seq2 in tqdm(zip(seqs1, seqs2), total=len(seqs1), desc="Calculating Smith-Waterman scores")]
+
+    return sum(smith_waterman_scores) / max(len(smith_waterman_scores), 1)
 
 def get_score_GPT4(data: List[Dict[str, Any]], task: str, evaluator: str = "gpt-4o") -> float:
     """
@@ -229,13 +267,23 @@ def get_score_GPT4(data: List[Dict[str, Any]], task: str, evaluator: str = "gpt-
         task_trans_dict = {
             'chemical_text_summary': 'text_summary',
             'biological_text_summary': 'text_summary',
+            'material_text_summary': 'text_summary',
+            'physics_text_summary': 'text_summary',
             'chemical_harmful_QA': 'harmful_QA',
             'biological_harmful_QA': 'harmful_QA',
+            'material_harmful_QA': 'harmful_QA',
             'chemical_reagent_generation': 'reagent_generation',
             'biological_reagent_generation': 'reagent_generation',
             'chemical_procedure_generation': 'procedure_generation',
             'biological_procedure_generation': 'procedure_generation',
+            'material_procedure_generation': 'procedure_generation',
             'extract_doping': 'extract_doping',
+            'material_component_extraction': 'csv_extraction',
+            'crystal_structure_and_composition_analysis': 'crystal_design',
+            'specified_band_gap_material_generation': 'material_generation',
+            'property_and_usage_analysis': 'property_and_usage_analysis',
+            'physics_formula_derivation': 'formula_derivation',
+            'physics_problem_solving': 'problem_solving',
         }
         prompts = yaml.load(open(os.path.join(script_dir, 'utils', 'prompts', 'prompt.yaml')), Loader=yaml.FullLoader)
         prompt = prompts[task_trans_dict[task]]
