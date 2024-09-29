@@ -24,6 +24,10 @@ The <b>Sci</b>entific <b>Know</b>ledge <b>Eval</b>uation (<b>SciKnowEval</b>) be
 
 ## 🆕 News
 
+- **\[Sep 2024\]** We released an [evaluation report of OpenAI o1](http://scimind.ai/sciknoweval/o1) with SciKnowEval.
+
+- **\[Sep 2024\]** We have updated the SciKnowEval paper in [arXiv](https://arxiv.org/abs/2406.09098v2).
+
 - **\[Jul 2024\]** We have recently added the Physics and Materials to SciKnowEval. You can access the dataset [here](https://huggingface.co/datasets/hicai-zju/SciKnowEval) and check out the leaderboard [here](http://scimind.ai/sciknoweval).
 
 - **\[Jun 2024\]** We released the SciKnowEval Dataset and Leaderboard for Biology and Chemistry.
@@ -46,23 +50,23 @@ The <b>Sci</b>entific <b>Know</b>ledge <b>Eval</b>uation (<b>SciKnowEval</b>) be
 
 <h3 id="2.1">✡️ Evaluated Abilities</h3>
 
-* 📖 **L1**: **Studying extensively** (i.e., *knowledge coverage*). This dimension evaluates the breadth of an LLM's knowledge across various scientific domains. It measures the model's ability to remember and understand a wide range of scientific concepts.
+* 📖 **L1**: **Studying extensively** (i.e., *knowledge memory*). This dimension evaluates the breadth of an LLM’s knowledge across various scientific domains. It measures the model’s ability to remember a wide range of scientific concepts.
 
-* ❓ **L2**: **Enquiring earnestly** (i.e., *knowledge enquiry and exploration*). This aspect focuses on the LLM's capacity for deep enquiry and exploration within scientific contexts, such as analyzing scientific texts, identifying key concepts, and questioning relevant information.
+* ❓ **L2**: **Enquiring earnestly** (i.e., *knowledge comprehension*). This aspect focuses on the LLM’s capacity for deep enquiry and exploration within scientific contexts, such as analyzing scientific texts, identifying key concepts, and questioning relevant information.
 
-* 💡 **L3**: **Thinking profoundly** (i.e., *knowledge reflection and reasoning*). This criterion examines the model's capacity for critical thinking, logical deduction, numerical calculation, function prediction, and the ability to engage in reflective reasoning to solve problems.
+* 💡 **L3**: **Thinking profoundly** (i.e., *knowledge reasoning*). This criterion examines the model’s capacity for critical thinking, logical deduction, numerical calculation, function prediction, and the ability to engage in reflective reasoning to solve problems.
 
-* 🔨 **L4**: **Discerning clearly** (i.e., *knowledge discernment and safety assessment*). This aspect evaluates the LLM's ability to make correct, secure, and ethical decisions based on scientific knowledge, including assessing the harmfulness and toxicity of information, and understanding the ethical implications and safety concerns related to scientific endeavors.
+* 🔨 **L4**: **Discerning clearly** (i.e., *knowledge discernment*). This aspect evaluates the LLM’s ability to make correct, secure, and ethical decisions based on scientific knowledge, including assessing the harmfulness and toxicity of information, and understanding the ethical implications and safety concerns related to scientific endeavors.
 
-* 🔬 **L5**: **Practicing assiduously** (i.e., *knowledge practice and application*). The final dimension assesses the LLM's capability to apply scientific knowledge effectively in real-world scenarios, such as analyzing complex scientific problems and creating innovative solutions.
+* 🔬 **L5**: **Practicing assiduously** (i.e., *knowledge application*). The final dimension assesses the LLM’s capability to apply scientific knowledge effectively in real-world scenarios, such as analyzing complex scientific problems and creating innovative solutions.
 
 <h3 id="2.2">🎯 Domains and Tasks</h3>
-<div align=center><img src="figure/tasks.jpeg" width="80%" height="100%" /></div>
-<div align=center><img src="figure/tasks2.jpg" width="80%" height="100%" /></div>
+<div align=center><img src="figure/task.png" width="80%" height="100%" /></div>
+<div align=center><img src="figure/task2.png" width="80%" height="100%" /></div>
 
 <h3 id="2.4">🛠️ Data Construction</h3>
 
-<div align=center><img src="figure/data_collection.png" width="70%" height="100%" /></div>
+<div align=center><img src="figure/data_collection.png" width="80%" height="100%" /></div>
 
 <h2 id="3">🏹 QuickStart</h2>
 <h3 id="3.1">⬇️ Step 1: Installation</h3>
