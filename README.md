@@ -64,6 +64,10 @@ The <b>Sci</b>entific <b>Know</b>ledge <b>Eval</b>uation (<b>SciKnowEval</b>) be
 <div align=center><img src="figure/task.png" width="80%" height="100%" /></div>
 <div align=center><img src="figure/task2.png" width="80%" height="100%" /></div>
 
+<h3 id="2.3">📊 Data Stats</h3>
+
+<div align=center><img src="figure/stats.png" width="80%" height="100%" /></div>
+
 <h3 id="2.4">🛠️ Data Construction</h3>
 
 <div align=center><img src="figure/data_collection.png" width="80%" height="100%" /></div>
