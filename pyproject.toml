@@ -1,0 +1,77 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sciknoweval"
+version = "0.1.0"
+description = "Evaluating Multi-level Scientific Knowledge of Large Language Models"
+readme = "README.md"
+license ={file = "LICENSE"}
+authors = [
+    {name = "Kehua Feng", email = "kehuafeng@zju.edu.cn"},
+    {name = "HICAI-ZJU"}
+]
+maintainers = [
+    {name = "HICAI-ZJU"}
+]
+keywords = [
+    "llm",
+    "evaluation",
+    "benchmark", 
+    "scientific-knowledge",
+    "ai"
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+requires-python = ">=3.8"
+dynamic = ["dependencies"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[project.urls]
+Homepage = "https://github.com/HICAI-ZJU/SciKnowEval"
+Documentation = "http://www.scimind.ai/sciknoweval/"
+Repository = "https://github.com/HICAI-ZJU/SciKnowEval.git"
+"Bug Tracker" = "https://github.com/HICAI-ZJU/SciKnowEval/issues"
+Dataset = "https://huggingface.co/datasets/hicai-zju/SciKnowEval"
+Paper = "https://arxiv.org/abs/2406.09098"
+
+[project.scripts]
+sciknoweval = "sciknoweval.eval:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov",
+    "black",
+    "isort",
+    "flake8"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["sciknoweval*"]
+
+[tool.setuptools.package-data]
+sciknoweval = ["evaluation/utils/prompts/*.yaml"]
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+
+[tool.isort]  
+profile = "black"
+line_length = 88

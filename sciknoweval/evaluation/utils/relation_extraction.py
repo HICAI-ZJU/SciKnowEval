@@ -1,10 +1,13 @@
+import re
 from collections import Counter
-import re
-from typing import List, Tuple, Any, Dict
-import numpy as np
-import re
-from evaluation.utils.process import same_entities, sentence_to_vec, cosine_similarity, cosine_similarity_2
+from typing import Any, Dict, List, Tuple
 
+from .process import (
+    cosine_similarity,
+    cosine_similarity_2,
+    same_entities,
+    sentence_to_vec,
+)
 
 
 def parse_tuples(tuple_str):

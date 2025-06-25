@@ -75,18 +75,31 @@ The <b>Sci</b>entific <b>Know</b>ledge <b>Eval</b>uation (<b>SciKnowEval</b>) be
 <h2 id="3">🏹 QuickStart</h2>
 <h3 id="3.1">⬇️ Step 1: Installation</h3>
 
-To evaluate LLMs on SciKnowEval, first clone the repository:
+**Option 1: pip install from GitHub (Recommended)**
+```bash
+pip install sciknoweval@https://github.com/HICAI-ZJU/SciKnowEval.git
+```
+
+**Option 2: Install from Source**
 ```bash
 git clone https://github.com/HICAI-ZJU/SciKnowEval.git
 cd SciKnowEval
+pip install .
 ```
-Next, set up a conda environment to manage the dependencies:
+
+**Option 3: Development Installation**
 ```bash
+git clone https://github.com/HICAI-ZJU/SciKnowEval.git
+cd SciKnowEval
+pip install -e .
+```
+
+**Option 4: Manual Setup (Legacy)**
+```bash
+git clone https://github.com/HICAI-ZJU/SciKnowEval.git
+cd SciKnowEval
 conda create -n sciknoweval python=3.10.9
 conda activate sciknoweval
-```
-Then, install the required dependencies:
-```bash
 pip install -r requirements.txt
 ```
 
@@ -152,7 +165,31 @@ By following these guidelines, you can effectively use the SciKnowEval benchmark
 
 <h3 id="3.4">🚀 Step 4: Evaluate</h3>
 
-You can run `eval.py` to evaluate your model:
+**Option 1: Using the Command Line Interface (Recommended)**
+
+After installing SciKnowEval, you can use the `sciknoweval` command:
+
+```bash
+export OPENAI_API_KEY="YOUR_API_KEY"
+sciknoweval \
+  --data_path "your/model/predictions.json" \
+  --word2vec_model_path "path/to/GoogleNews-vectors-negative300.bin" \
+  --gen_evaluator "gpt-4o" \
+  --output_path "path/to/your/output.json"
+```
+
+**Option 2: Using Python Module**
+
+```bash
+export OPENAI_API_KEY="YOUR_API_KEY"
+python -m sciknoweval.eval \
+  --data_path "your/model/predictions.json" \
+  --word2vec_model_path "path/to/GoogleNews-vectors-negative300.bin" \
+  --gen_evaluator "gpt-4o" \
+  --output_path "path/to/your/output.json"
+```
+
+**Option 3: Direct Script Execution (Legacy)**
 
 ```bash
 data_path="your/model/predictions.json"
@@ -161,7 +198,7 @@ gen_evaluator="gpt-4o" # the correct model name in OpenAI
 output_path="path/to/your/output.json"
 
 export OPENAI_API_KEY="YOUR_API_KEY"
-python eval.py \
+python sciknoweval/eval.py \
   --data_path $data_path \
   --word2vec_model_path $word2vec_model_path \
   --gen_evaluator $gen_evaluator \

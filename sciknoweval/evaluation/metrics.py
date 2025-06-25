@@ -1,15 +1,21 @@
 import os
-import yaml
-from typing import List, Any, Dict
-from tqdm import tqdm
-from scipy.spatial.distance import cosine
-from gensim.models import KeyedVectors
-from evaluation.utils.relation_extraction import *
-from evaluation.utils.process import load_word2vec_model
-from evaluation.utils.generation import calculate_nltk_scores, calculate_smiles_metrics
+from typing import Any, Dict, List
 
 import tiktoken
-from evaluation.utils.openai_api import OpenAIChat
+import yaml
+from tqdm import tqdm
+
+from .utils.generation import calculate_nltk_scores, calculate_smiles_metrics
+from .utils.openai_api import OpenAIChat
+from .utils.process import load_word2vec_model
+from .utils.relation_extraction import (
+    cos_f1_score,
+    macro_f1_score_triplets,
+    macro_f1_score_tuples,
+    validate_format_and_extract_data_triplets,
+    validate_format_and_extract_data_tuples,
+)
+
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
 
