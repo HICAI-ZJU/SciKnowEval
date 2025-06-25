@@ -4,7 +4,7 @@ numpy
 rouge_score
 rdkit
 rdchiral
-openai==0.28.1
+openai>=0.28.1
 scipy
 gensim
 tiktoken
