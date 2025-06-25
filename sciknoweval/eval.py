@@ -1,8 +1,8 @@
 import json
 import os
 import argparse
-from evaluation.metrics import *
-from evaluation.define import get_task_func, get_task_data, reformat_result
+from .evaluation.metrics import *
+from .evaluation.define import get_task_func, get_task_data, reformat_result
 
 import warnings
 warnings.filterwarnings("ignore")

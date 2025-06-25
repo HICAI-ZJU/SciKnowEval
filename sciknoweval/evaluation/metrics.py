@@ -4,12 +4,12 @@ from typing import List, Any, Dict
 from tqdm import tqdm
 from scipy.spatial.distance import cosine
 from gensim.models import KeyedVectors
-from evaluation.utils.relation_extraction import *
-from evaluation.utils.process import load_word2vec_model
-from evaluation.utils.generation import calculate_nltk_scores, calculate_smiles_metrics
+from .utils.relation_extraction import *
+from .utils.process import load_word2vec_model
+from .utils.generation import calculate_nltk_scores, calculate_smiles_metrics
 
 import tiktoken
-from evaluation.utils.openai_api import OpenAIChat
+from .utils.openai_api import OpenAIChat
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
 
