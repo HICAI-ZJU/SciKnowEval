@@ -1,10 +1,17 @@
-import json
-import os
-import time
-from evaluation.metrics import *
-from typing import List, Tuple, Any, Dict
 import warnings
-from tqdm import tqdm
+from typing import Any, Dict, List
+
+from .metrics import (
+    get_score_BLEU_ROUGE,
+    get_score_CLS,
+    get_score_filling,
+    get_score_GPT4,
+    get_score_Mol_GEN,
+    get_score_RE_triplets,
+    get_score_RE_tuples,
+    get_score_reaction,
+    get_score_smith_waterman,
+)
 
 warnings.filterwarnings("ignore")
 

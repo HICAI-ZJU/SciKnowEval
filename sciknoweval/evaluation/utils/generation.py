@@ -1,14 +1,12 @@
-
 import numpy as np
 from nltk.translate.bleu_score import sentence_bleu
 from nltk.translate.meteor_score import meteor_score
-from tqdm import tqdm
-from rouge_score import rouge_scorer
-
-from rdkit import Chem, DataStructs
-from rdkit.Chem import MACCSkeys, AllChem
 from rdchiral.chiral import copy_chirality
+from rdkit import Chem, DataStructs
+from rdkit.Chem import AllChem, MACCSkeys
 from rdkit.Chem.AllChem import AssignStereochemistry
+from rouge_score import rouge_scorer
+from tqdm import tqdm
 
 
 def calculate_nltk_scores(tokenizer, ans_strs, pred_strs):

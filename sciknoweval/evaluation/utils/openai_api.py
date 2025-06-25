@@ -1,7 +1,8 @@
-import openai
+import asyncio
 import os
 from typing import List
-import asyncio
+
+import openai
 
 
 class OpenAIChat():

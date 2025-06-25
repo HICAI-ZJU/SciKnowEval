@@ -1,10 +1,15 @@
+import argparse
 import json
 import os
-import argparse
-from .evaluation.metrics import *
-from .evaluation.define import get_task_func, get_task_data, reformat_result
-
 import warnings
+
+from .evaluation.define import get_task_data, get_task_func, reformat_result
+from .evaluation.metrics import (
+    get_score_GPT4,
+    get_score_RE_triplets,
+    get_score_RE_tuples,
+)
+
 warnings.filterwarnings("ignore")
 
 
