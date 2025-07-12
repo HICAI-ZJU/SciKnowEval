@@ -24,6 +24,8 @@ The <b>Sci</b>entific <b>Know</b>ledge <b>Eval</b>uation (<b>SciKnowEval</b>) be
 
 ## 🆕 News
 
+- **\[Jul 2025\]** We have updated the SciKnowEval dataset (V2) in [HuggingFace](https://huggingface.co/datasets/hicai-zju/SciKnowEval).
+
 - **\[Sep 2024\]** We released an [evaluation report of OpenAI o1](http://scimind.ai/sciknoweval/o1) with SciKnowEval.
 
 - **\[Sep 2024\]** We have updated the SciKnowEval paper in [arXiv](https://arxiv.org/abs/2406.09098v2).
@@ -50,7 +52,7 @@ The <b>Sci</b>entific <b>Know</b>ledge <b>Eval</b>uation (<b>SciKnowEval</b>) be
 
 <h3 id="2.1">✡️ Evaluated Abilities</h3>
 
-* 📖 **L1**: **Studying extensively** (i.e., *knowledge memory*). This dimension evaluates the breadth of an LLM’s knowledge across various scientific domains. It measures the model’s ability to remember a wide range of scientific concepts.
+* 📖 **L1**: **Studying extensively** (i.e., *knowledge memory*). This dimension evaluates an LLM's ability to store and retrieve a vast range of factual scientific knowledge across multiple domains. It measures the breadth and accuracy of the model's memory, including definitions, taxonomies, historical facts, and widely accepted scientific principles.
 
 * ❓ **L2**: **Enquiring earnestly** (i.e., *knowledge comprehension*). This aspect focuses on the LLM’s capacity for deep enquiry and exploration within scientific contexts, such as analyzing scientific texts, identifying key concepts, and questioning relevant information.
 
@@ -62,7 +64,6 @@ The <b>Sci</b>entific <b>Know</b>ledge <b>Eval</b>uation (<b>SciKnowEval</b>) be
 
 <h3 id="2.2">🎯 Domains and Tasks</h3>
 <div align=center><img src="figure/task.png" width="80%" height="100%" /></div>
-<div align=center><img src="figure/task2.png" width="80%" height="100%" /></div>
 
 <h3 id="2.3">📊 Data Stats</h3>
 
