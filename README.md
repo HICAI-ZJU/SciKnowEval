@@ -24,7 +24,7 @@ The <b>Sci</b>entific <b>Know</b>ledge <b>Eval</b>uation (<b>SciKnowEval</b>) be
 
 ## 🆕 News
 
-- **\[Jul 2025\]** We have updated the SciKnowEval dataset (V2) in [HuggingFace](https://huggingface.co/datasets/hicai-zju/SciKnowEval).
+- **\[Jul 2025\]** We have updated the SciKnowEval dataset (V2) in [HuggingFace](https://huggingface.co/datasets/hicai-zju/SciKnowEval). In V2, we have streamlined the dataset size and improved overall data quality. The updated version now comprises 28,392 samples spanning 58 tasks across four scientific domains.
 
 - **\[Sep 2024\]** We released an [evaluation report of OpenAI o1](http://scimind.ai/sciknoweval/o1) with SciKnowEval.
 
